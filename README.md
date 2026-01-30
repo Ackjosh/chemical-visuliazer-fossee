@@ -61,4 +61,3 @@ python manage.py createsuperuser
 # (Follow prompts to set username/password, e.g., admin/password123)
 
 # Start the server
-python manage.py runserver
