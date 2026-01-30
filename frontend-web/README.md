@@ -1,16 +1,64 @@
-# React + Vite
+# Chemical Equipment Parameter Visualizer
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A hybrid Web and Desktop application for visualizing and analyzing chemical equipment data. This project was built as part of the **FOSSEE Internship Screening Task**.
 
-Currently, two official plugins are available:
+## 🚀 Features
+- **Hybrid Architecture:** Unified Django backend serving both a React.js Web Dashboard and a PyQt5 Desktop Application.
+- **Secure Authentication:** JWT (JSON Web Token) authentication required for uploading and viewing data across both platforms.
+- **Data Analytics:** Automatically calculates metrics (Average Temperature, Pressure, Flowrate) and equipment distribution upon upload.
+- **Interactive Visualization:**
+  - **Web:** Interactive Chart.js graphs.
+  - **Desktop:** Native Matplotlib integration.
+- **History Management:** Tracks the last 5 uploaded datasets with instant switching between them.
+- **Reporting:** Generates and downloads PDF analysis reports on demand.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## 🛠 Tech Stack
 
-## React Compiler
+### Backend
+- **Framework:** Django & Django REST Framework (DRF)
+- **Database:** SQLite (Development)
+- **Data Processing:** Pandas
+- **Security:** SimpleJWT (Authentication), CORS Headers
+- **Reporting:** ReportLab (PDF Generation)
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+### Web Frontend
+- **Framework:** React.js (Vite)
+- **HTTP Client:** Axios
+- **Visualization:** Chart.js, React-Chartjs-2
+- **Styling:** CSS Modules / Flexbox
 
-## Expanding the ESLint configuration
+### Desktop Frontend
+- **Framework:** Python (PyQt5)
+- **Visualization:** Matplotlib
+- **HTTP Client:** Requests
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+---
+
+## 📦 Setup Instructions
+
+Follow these steps to run the full stack locally.
+
+### 1. Backend Setup
+The backend must be running for the frontends to work.
+
+```bash
+# Navigate to backend folder
+cd backend
+
+# Create virtual environment (Optional but recommended)
+python -m venv venv
+# Windows:
+venv\Scripts\activate
+# Mac/Linux:
+source venv/bin/activate
+
+# Install dependencies
+pip install -r requirements.txt
+
+# Run migrations and create superuser
+python manage.py migrate
+python manage.py createsuperuser
+# (Follow prompts to set username/password, e.g., admin/password123)
+
+# Start the server
+python manage.py runserver
