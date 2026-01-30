@@ -1,0 +1,16 @@
+Equipment Name,Type,Flowrate,Pressure,Temperature
+R-101,Reactor,150.5,25.0,450.0
+HX-201,Heat Exchanger,300.0,15.5,120.0
+P-301,Pump,500.2,40.0,45.5
+R-102,Reactor,160.0,24.5,460.0
+DC-401,Distillation Column,200.0,10.0,90.0
+HX-202,Heat Exchanger,280.0,16.0,115.0
+P-302,Pump,510.5,42.0,46.0
+R-103,Reactor,155.0,26.0,455.0
+DC-402,Distillation Column,210.0,11.0,92.0
+HX-203,Heat Exchanger,290.0,14.5,122.0
+P-303,Pump,505.0,38.5,44.0
+R-104,Reactor,148.0,25.5,448.0
+T-501,Storage Tank,0.0,1.2,25.0
+T-502,Storage Tank,0.0,1.1,24.0
+P-304,Pump,520.0,41.0,47.0
