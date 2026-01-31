@@ -13,7 +13,7 @@ const FileUpload = ({ onUploadSuccess }) => {
     formData.append('file', file);
 
     try {
-      const response = await axios.post('http://127.0.0.1:8000/api/upload/', formData);
+      const response = await axios.post('https://chemical-visuliazer-fossee-backend.onrender.com/api/upload/', formData);
       setMessage('✅ Uploaded!');
       onUploadSuccess(response.data.id);
       setTimeout(() => setMessage(''), 3000);

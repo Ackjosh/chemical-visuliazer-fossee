@@ -8,7 +8,7 @@ const HistoryList = ({ onSelectFile }) => {
 
     const fetchHistory = async () => {
         try {
-            const res = await axios.get('http://127.0.0.1:8000/api/history/');
+            const res = await axios.get('https://chemical-visuliazer-fossee-backend.onrender.com/api/history/');
             setFiles(res.data);
         } catch (err) { console.error(err); }
     };

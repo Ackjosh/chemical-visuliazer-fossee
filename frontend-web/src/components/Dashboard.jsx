@@ -11,7 +11,7 @@ const Dashboard = ({ fileId }) => {
 
   const fetchStats = async () => {
     try {
-      const res = await axios.get(`http://127.0.0.1:8000/api/stats/${fileId}/`);
+      const res = await axios.get(`https://chemical-visuliazer-fossee-backend.onrender.com/api/stats/${fileId}/`);
       setStats(res.data);
     } catch (err) {
       console.error("Error fetching stats:", err);
@@ -20,7 +20,7 @@ const Dashboard = ({ fileId }) => {
 
   const handleDownload = async () => {
     try {
-      const response = await axios.get(`http://127.0.0.1:8000/api/report/${fileId}/`, {
+      const response = await axios.get(`https://chemical-visuliazer-fossee-backend.onrender.com/api/report/${fileId}/`, {
         responseType: 'blob',
       });
 

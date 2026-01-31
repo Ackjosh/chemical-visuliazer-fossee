@@ -22,7 +22,7 @@ function App() {
   const handleLogin = async (e) => {
     e.preventDefault();
     try {
-      const res = await axios.post('http://127.0.0.1:8000/api/token/', { username, password });
+      const res = await axios.post('https://chemical-visuliazer-fossee-backend.onrender.com/api/token/', { username, password });
       const newToken = res.data.access;
       setToken(newToken);
       localStorage.setItem('access_token', newToken);
@@ -86,7 +86,7 @@ function App() {
             <Dashboard fileId={currentFileId} />
           ) : (
             <div style={styles.emptyState}>
-              <h3>Welcome to ChemViz</h3>
+              <h3>Welcome to Chemical Visualizer</h3>
               <p>Select a file from the sidebar or upload a new CSV to begin analysis.</p>
             </div>
           )}
