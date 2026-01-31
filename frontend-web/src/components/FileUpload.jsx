@@ -9,16 +9,38 @@ const FileUpload = ({ onUploadSuccess }) => {
 
   const handleUpload = async () => {
     if (!file) return;
+    const token = localStorage.getItem('access') || localStorage.getItem('token');
+
+    if (!token) {
+      setMessage('❌ You are not logged in!');
+      return;
+    }
+
     const formData = new FormData();
     formData.append('file', file);
 
     try {
-      const response = await axios.post('https://chemical-visuliazer-fossee-backend.onrender.com/api/upload/', formData);
-      setMessage('✅ Uploaded!');
+      const response = await axios.post(
+        'https://chemical-visuliazer-fossee-backend.onrender.com/api/upload/', 
+        formData,
+        {
+          headers: {
+            'Authorization': `Bearer ${token}`,
+            'Content-Type': 'multipart/form-data'
+          }
+        }
+      );
+
+      setMessage('Uploaded!');
       onUploadSuccess(response.data.id);
       setTimeout(() => setMessage(''), 3000);
     } catch (error) {
-      setMessage('❌ Failed');
+      console.error("Upload Error:", error);
+      if (error.response && error.response.status === 401) {
+          setMessage('Session expired. Please login again.');
+      } else {
+          setMessage('Failed to upload');
+      }
     }
   };
 
