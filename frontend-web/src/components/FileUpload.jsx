@@ -9,10 +9,10 @@ const FileUpload = ({ onUploadSuccess }) => {
 
   const handleUpload = async () => {
     if (!file) return;
-    const token = localStorage.getItem('access') || localStorage.getItem('token');
+    const token = localStorage.getItem('access_token'); 
 
     if (!token) {
-      setMessage('❌ You are not logged in!');
+      setMessage('You are not logged in!');
       return;
     }
 
