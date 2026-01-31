@@ -2,7 +2,7 @@
 
 A hybrid Web and Desktop application for visualizing and analyzing chemical equipment data. This project was built as part of the **FOSSEE Internship Screening Task**.
 
-## 🚀 Features
+## Features
 - **Hybrid Architecture:** Unified Django backend serving both a React.js Web Dashboard and a PyQt5 Desktop Application.
 - **Secure Authentication:** JWT (JSON Web Token) authentication required for uploading and viewing data across both platforms.
 - **Data Analytics:** Automatically calculates metrics (Average Temperature, Pressure, Flowrate) and equipment distribution upon upload.
@@ -12,7 +12,7 @@ A hybrid Web and Desktop application for visualizing and analyzing chemical equi
 - **History Management:** Tracks the last 5 uploaded datasets with instant switching.
 - **Reporting:** Generates and downloads PDF analysis reports on demand.
 
-## 🛠 Tech Stack
+## Tech Stack
 
 ### Backend
 - **Framework:** Django & Django REST Framework (DRF)
@@ -33,7 +33,7 @@ A hybrid Web and Desktop application for visualizing and analyzing chemical equi
 
 ---
 
-## 📦 Setup Instructions
+## Setup Instructions
 
 ### 1. Backend Setup
 
@@ -66,7 +66,7 @@ python main.py
 
 ---
 
-## 🔑 Usage Guide
+## Usage Guide
 
 1.  **Login:** Use the superuser credentials created in the Backend Setup to log in to both the Web and Desktop apps.
 2.  **Upload Data:** Select a CSV file (format below) and upload.
@@ -89,7 +89,7 @@ T-501,Storage Tank,0.0,1.2,25.0
 
 ---
 
-## 📂 Project Structure
+## Project Structure
 
 ```
 chemical-visualizer/
@@ -107,7 +107,7 @@ chemical-visualizer/
     └── main.py             # Main entry point for Desktop GUI
 ```
 
-## 📝 Configuration
+## Configuration
 - **Server:** The backend server must be running on `http://127.0.0.1:8000/`.
 - **Security:** The `CORE_SECRET_KEY` is configured to use environment variables (`.env`).
 - **Database:** SQLite is used for local development.
