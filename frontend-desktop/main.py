@@ -8,7 +8,7 @@ from matplotlib.backends.backend_qt5agg import FigureCanvasQTAgg as FigureCanvas
 import webbrowser
 from PyQt5.QtWidgets import QLineEdit
 
-API_BASE_URL = "http://127.0.0.1:8000/api"
+API_BASE_URL = "https://chemical-visuliazer-fossee-backend.onrender.com/api"
 
 class LoginWindow(QWidget):
     def __init__(self):
@@ -39,7 +39,7 @@ class LoginWindow(QWidget):
         username = self.user_input.text()
         password = self.pass_input.text()
         try:
-            res = requests.post("http://127.0.0.1:8000/api/token/", json={'username': username, 'password': password})
+            res = requests.post(f"{API_BASE_URL}/token/", json={'username': username, 'password': password})
             if res.status_code == 200:
                 print("Login Success!")
                 self.token = res.json()['access']
