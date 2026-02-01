@@ -12,6 +12,8 @@ function App() {
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
   const [currentFileId, setCurrentFileId] = useState(null);
+  
+  const [refreshTrigger, setRefreshTrigger] = useState(0);
 
   useEffect(() => {
     if (token) {
@@ -39,6 +41,11 @@ function App() {
     setCurrentFileId(null);
   };
 
+  const handleUploadSuccess = (newId) => {
+      setCurrentFileId(newId);
+      setRefreshTrigger(prev => prev + 1);
+  };
+
   if (!token) {
     return (
       <div style={styles.loginPage}>
@@ -64,11 +71,11 @@ function App() {
         
         <div style={{ padding: '20px' }}>
           <p style={styles.sectionTitle}>ACTIONS</p>
-          <FileUpload onUploadSuccess={setCurrentFileId} />
+          <FileUpload onUploadSuccess={handleUploadSuccess} />
           
           <div style={{ marginTop: '30px' }}>
              <p style={styles.sectionTitle}>HISTORY</p>
-             <HistoryList onSelectFile={setCurrentFileId} />
+             <HistoryList key={refreshTrigger} onSelectFile={setCurrentFileId} />
           </div>
         </div>
 

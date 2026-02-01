@@ -8,7 +8,12 @@ const HistoryList = ({ onSelectFile }) => {
 
     const fetchHistory = async () => {
         try {
-            const res = await axios.get('https://chemical-visuliazer-fossee-backend.onrender.com/api/history/');
+            const token = localStorage.getItem('access_token');
+            const res = await axios.get('https://chemical-visuliazer-fossee-backend.onrender.com/api/history/', {
+                headers: {
+                    'Authorization': `Bearer ${token}`
+                }
+            });
             setFiles(res.data);
         } catch (err) { console.error(err); }
     };
