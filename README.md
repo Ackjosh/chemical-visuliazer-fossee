@@ -12,6 +12,10 @@ A hybrid Web and Desktop application for visualizing and analyzing chemical equi
 - **History Management:** Tracks the last 5 uploaded datasets with instant switching.
 - **Reporting:** Generates and downloads PDF analysis reports on demand.
 
+## Credentials for LogIN
+- **Username :** admin
+- **Password :** password123
+
 ## Tech Stack
 
 ### Backend
