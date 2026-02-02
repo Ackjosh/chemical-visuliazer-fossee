@@ -21,3 +21,29 @@ html, body, #root {
 body {
   text-align: left; 
 }
+
+/* Login page animations */
+@keyframes slideInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* Input focus state */
+input:focus {
+  outline: none;
+  border-color: #667eea !important;
+  background-color: #ffffff !important;
+  box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1) !important;
+}
